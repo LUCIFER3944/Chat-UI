@@ -20,21 +20,35 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Send message functionality
     const sendButtons = document.querySelectorAll('.send-button');
+    const messageInputs = document.querySelectorAll('.message-input');
+
     sendButtons.forEach((button, index) => {
         button.addEventListener('click', function() {
-            const chatBox = chatBoxes[index];
-            const messageInput = chatBox.querySelector('.message-input');
-            const message = messageInput.value.trim();
+            sendMessage(index);
+        });
+    });
 
-            if (message !== '') {
-                const messagesContainer = chatBox.querySelector('.messages');
-                sendMessage(messagesContainer, message, 'sent');
-                messageInput.value = ''; // Clear input after sending message
+    messageInputs.forEach((input, index) => {
+        input.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                sendMessage(index);
             }
         });
     });
 
-    function sendMessage(messagesContainer, message, messageType) {
+    function sendMessage(index) {
+        const chatBox = chatBoxes[index];
+        const messageInput = chatBox.querySelector('.message-input');
+        const message = messageInput.value.trim();
+
+        if (message !== '') {
+            const messagesContainer = chatBox.querySelector('.messages');
+            sendMessageElement(messagesContainer, message, 'sent');
+            messageInput.value = ''; // Clear input after sending message
+        }
+    }
+
+    function sendMessageElement(messagesContainer, message, messageType) {
         const messageDiv = document.createElement('div');
         messageDiv.classList.add('message', messageType === 'sent' ? 'sent-message' : 'received-message');
 
