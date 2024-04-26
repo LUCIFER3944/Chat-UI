@@ -9,7 +9,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:  rgba(29, 26, 26, 0.719);
+    background-color:  rgba(29, 26, 26, 0.851);
+    color: white;
 }
 .leader{
     display: flex;
@@ -23,7 +24,7 @@
     align-items: center;
     width: 100px;
     height: 100vh;
-    background-color: rgba(29, 26, 26, 0.782);
+    background-color: rgba(28, 25, 25, 0.892);
     
   
 }
