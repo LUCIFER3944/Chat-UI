@@ -1,37 +1,116 @@
-*{
+* {
     margin: 0;
     padding: 0;
- 
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Arial', sans-serif; /* Changed font to Arial */
 }
-.title{
+
+.title {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:  rgba(29, 26, 26, 0.851);
+    background-color: #1d1a1ad4; /* Darker background color */
     color: white;
+    padding: 10px 0; /* Added padding for spacing */
 }
-.leader{
+
+.leader {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    align-items: flex-start; /* Align items at the start */
 }
-.sidebar{
+
+.sidebar {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between; /* Center icons vertically */
     align-items: center;
-    width: 100px;
+    width: 80px; /* Reduced width */
     height: 100vh;
-    background-color: rgba(28, 25, 25, 0.892);
-    
-  
+    background-color: #1d1a1ad4; /* Darker background color */
 }
-.sidebar:hover{
-    padding: 20px;
+
+.sidebar h5 {
+    margin: 10px 0; /* Added margin for spacing between icons */
+    cursor: pointer; /* Add cursor pointer for interaction */
 }
-#sidehover:hover{
-    background-color: rgb(228, 83, 83);
-    border-radius: 20%;
+
+.sidebar h5:hover {
+    background-color: #E45353; /* Lighter red on hover */
+    border-radius: 50%; /* Circular hover effect */
+    color: white; /* Change text color on hover */
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    padding: 10px; /* Added padding for spacing */
+    border-bottom: 1px solid #ccc; /* Separating lines between profiles */
+}
+
+.profile img {
+    width: 50px; /* Increased image size */
+    border-radius: 50%; /* Circular image */
+    margin-right: 10px; /* Added margin for spacing */
+}
+
+.profile-box {
+    flex-grow: 1; /* Allow text to grow */
+}
+
+.chat-box {
+    flex-grow: 1; /* Allow chat box to grow */
+    background-color: #F2F2F2; /* Light gray background for chat */
+    padding: 20px; /* Added padding for spacing */
+    margin-left: 20px; /* Added margin for spacing */
+    border-radius: 10px;
+    overflow-y: auto; /* Add vertical scroll when content exceeds height */
+    max-height: 720px; /* Set maximum height for the chat box */
+}
+
+
+.message-input {
+    width: calc(100% - 80px); /* Adjusted width to fit container */
+    padding: 10px; /* Added padding for spacing */
+    margin-bottom: 10px; /* Added margin for spacing */
+    border: 1px solid #ccc; /* Added border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.send-button {
+    background-color: #007BFF; /* Blue send button */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.send-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+.sent-message {
+    align-self: flex-end; /* Align sent messages to the right */
+    text-align: right; /* Right-align message content */
+}
+
+.received-message {
+    align-self: flex-start; /* Align received messages to the left */
+    text-align: left; /* Left-align message content */
+}
+
+.message-content {
+    max-width: 70%; /* Limit message width */
+    padding: 8px 12px; /* Add padding to message content */
+    border-radius: 10px; /* Rounded corners for message bubbles */
+    background-color: #DCF8C6; /* Light green background for received messages */
+    margin: 4px; /* Add margin between messages */
+}
+
+.sent-message .message-content {
+    background-color: #E5E5EA; /* Light gray background for sent messages */
 }
