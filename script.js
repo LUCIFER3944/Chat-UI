@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+\document.addEventListener('DOMContentLoaded', function() {
     const profiles = document.querySelectorAll('.profile');
     const chatBoxes = document.querySelectorAll('.chat-box');
 
@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Send message functionality
     const sendButtons = document.querySelectorAll('.send-button');
     const messageInputs = document.querySelectorAll('.message-input');
+    const cameraButtons = document.querySelectorAll('.camera-button'); // Select camera buttons
 
     sendButtons.forEach((button, index) => {
         button.addEventListener('click', function() {
@@ -33,6 +34,12 @@ document.addEventListener('DOMContentLoaded', function() {
             if (event.key === 'Enter') {
                 sendMessage(index);
             }
+        });
+    });
+
+    cameraButtons.forEach((button, index) => {
+        button.addEventListener('click', function() {
+            takePhoto(index);
         });
     });
 
@@ -68,4 +75,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         messagesContainer.appendChild(messageDiv);
     }
+
+   
 });
