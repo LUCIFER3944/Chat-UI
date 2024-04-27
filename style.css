@@ -118,3 +118,19 @@
 .sent-message .message-content {
     background-color: #E5E5EA; /* Light gray background for sent messages */
 }
+profile:hover{color: whitesmoke;
+    background-color: #0056b3;
+    cursor:grab;
+    animation:hover-effect 0.3s ease-in-out;
+
+}
+@keyframes hover-effect{
+    0%{
+        transform: scale(1);
+        box-shadow: 0 0 10px rqba(0,0,0,0,5);
+    }
+    100%{
+        transform: scale(1.1);  
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+}
