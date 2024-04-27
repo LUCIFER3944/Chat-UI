@@ -1,4 +1,4 @@
-\document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     const profiles = document.querySelectorAll('.profile');
     const chatBoxes = document.querySelectorAll('.chat-box');
 
@@ -76,5 +76,25 @@
         messagesContainer.appendChild(messageDiv);
     }
 
-   
+    document.addEventListener('DOMContentLoaded', function() {
+        const profiles = document.querySelectorAll('.profile');
+      
+        profiles.forEach(profile => {
+          profile.addEventListener('click', function() {
+            const profileName = profile.querySelector('h6').textContent;
+            openChatWindow(profileName);
+          });
+        });
+      
+        function openChatWindow(profileName) {
+          const chatBox = document.querySelector('.chat-box');
+          const chatTitle = chatBox.querySelector('.title h1');
+          chatTitle.textContent = profileName;
+      
+          // You can add more logic here to load previous messages or perform other actions when opening the chat window
+      
+          chatBox.style.display = 'block'; // Show the chat box
+        }
+      });
+      
 });
